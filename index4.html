@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h3>
+        Bài 4:
+        Viết chương trình tính tổng các số nguyên tố nhỏ hơn 500
+    </h3>
+</div>
+<div>
+    <p id="result"></p>
+    <p id="result1"></p>
+</div>
+<script>
+    function testNumberPrime(number) {
+        let startNumber = 2;
+        //Push phần tử vào Array
+        let arr = new Array()
+        while (startNumber < number) {
+            //check xem có phải số nguyên tố không
+            let check = true;
+            //Điều kiện để lọc ra số nguyên tố
+            for (let i = 2; i <= Math.sqrt(startNumber); i++) {
+                if (startNumber % i === 0) {
+                    check = false
+                    break
+                }
+            }
+            //Push từng phần tử trong mảng
+            if (check) {
+                arr.push(startNumber)
+            }
+            startNumber ++
+        }
+        return arr
+    }
+    //Lặp tính tổng phần tử trong mảng
+    function totalNumberPrime(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length ; i++) {
+            sum += arr[i]
+        }
+        return sum
+    }
+    let number = 500
+    let arr = testNumberPrime(number);
+    let total = totalNumberPrime(arr)
+    document.getElementById("result").innerHTML="Các số nguyên tố nhỏ hơn " + number + " là:"+"</br>" + arr;
+    document.getElementById("result1").innerHTML="Tổng các số nguyên tố nhỏ hơn "+ number + " là: " + total;
+</script>
+</body>
+</html>

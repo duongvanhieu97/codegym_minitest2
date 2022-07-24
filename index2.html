@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h3>Bài 2:
+        Cho trước 1 mảng n phần tử.
+        Viết hàm cho phép đếm xem có bao nhiêu phần tử a ( a được nhập vào tử bàn phím)
+    </h3>
+</div>
+<script>
+    let arr = ['a','a','a',2,3,4,'a']
+    function countArr() {
+        let count = 0;
+        for (let i = 0; i < arr.length ; i++) {
+            if (arr[i] == 'a') {
+                count ++
+            }
+        }
+        return count
+    }
+    document.write(countArr())
+</script>
+</body>
+</html>
